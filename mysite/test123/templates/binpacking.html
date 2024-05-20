@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<h1>Genetic Algorithm Solution</h1>
+
+<h2>Available Items:</h2>
+<ul>
+    {% for item in available_items %}
+    <li>Item {{ item.index }}: Value = {{ item.value }}, Weight = {{ item.weight }}</li>
+    {% endfor %}
+</ul>
+<hr>
+
+<h2>Best Solution Found:</h2>
+<p>Bit Representation: {{ best_solution_bits }}</p>
+<p>Total Value: {{ best_solution_fitness }}</p>
+<hr>
+
+<h2>Items Included in the Best Solution:</h2>
+<ul>
+    {% for item in included_items %}
+    <li>Value: {{ item.value }}, Weight: {{ item.weight }}</li>
+    {% endfor %}
+</ul>
+<hr>
+
+<p>Total Weight: {{ total_weight }}</p>
+
+{% endblock %}
